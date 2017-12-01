@@ -39,11 +39,10 @@ if __name__ == "__main__":
     tape_list = tape(whitespace, tape_alphabet)
 
     # Essa execução esta fazendo o que mesmo?
-    '''
+    
     for i in range(2, number_of_args):
-        print(sys.argv[i])
         tape_list.content = list(sys.argv[i])
-    '''
+    
     ###
     # Como a turing machine precisa executar varias entradas
     # seu conteudo deve ser atualizado para cada entrada...
@@ -51,26 +50,6 @@ if __name__ == "__main__":
     # para cada entrada, numa unica fita
 
     # Neste caso, é necessario um set_content() em turing_machine
-
-    ''' 
-    # ------------------------------------ MEU V
-    print(tape_list.content)
-    #for i in tape_list:
-    #    print(i)
-    print("Estados: ")
-    print(states)
-    print("Estados finais: ")
-    print(final_states)
-    print("Estado inicial: ")
-    print(initial_state)
-    print("Espaco branco: ")
-    print(whitespace)
-    print("Transicoes: ")
-    for i in transitions:
-        print(i)
-    # ------------------------------------ FIM
-    print("FIM DEBUG 1 \n\n")
-    '''
     
 
     # Vou modificar um pouco a inicialização da turing_machine    
@@ -89,3 +68,4 @@ if __name__ == "__main__":
             exit(0)
     print(False)
     '''
+
