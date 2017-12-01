@@ -1,11 +1,8 @@
 class tape:
-    def __init__(self, whitespace, tape_alphabet, content=[]):
+    def __init__(self, whitespace):
         self.position = 0
         self.whitespace_symbol = whitespace
-        self.alphabet = tape_alphabet
-        self.content = content
-        self.size = len(content)
-
+        self.content = [whitespace]
 
     def move_head(self, movement):
         if movement == 'L':
@@ -31,4 +28,9 @@ class tape:
         return self.content[self.position]
 
     def set_content(self, symbol):
-        self.content[self.position] = symbol 
+        self.content[self.position] = symbol
+
+    def set_all_content(self, word):
+        self.content = [i for i in word]
+        if type(word) == type([]):
+            self.content = word
