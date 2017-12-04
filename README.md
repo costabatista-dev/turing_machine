@@ -153,7 +153,7 @@ O módulo instance representa uma <b>instância de uma máquina de turing</b>. o
 ```
 
 <p style="text-align: justify">
-Cada instância precisa de um método para executar uma transição. Dessa forma, temos:
+Cada instância precisa de um método para executar uma transição. Ele é definido na instância. Dessa forma, temos:
 </p>
 
 ```python
@@ -164,7 +164,61 @@ Cada instância precisa de um método para executar uma transição. Dessa forma
         self.current_state = transition[1]
         # usado para acessar o simbolo da transicao para aquela fita
         tapeIndex = 1
+        
+         # executa a transição para todas as fitas da instância
+        for tape in self.tape_list:
+            # modifica o conteudo da posicao atual da fita
+            tape.set_content(transition[3*(tapeIndex)])
+            # move a cabeca da fita 
+            tape.move_head(transition[(3*tapeIndex)+1])
+            tapeIndex += 1
+
+        # Verifica se o estado atual esta na lista de estados finais
+        for final_state in self.final_states:
+            # Se o estado atual eh igual ao estado final
+            if self.current_state == final_state:
+            # termino da execucao da turing machine
+                print(True)
+                exit(0)
+        return 0
+
 ```
+
+<p style="text-align: justify">
+Além disso, é preciso um método para verificar as transições válidas para instância da máquina de turing. Assim, tem-se:
+</p>
+
+```python
+   '''
+        Verifica as transicoes validas para a instancia da maquina de turing
+    '''
+    def step(self,transitions):
+        validTransitions = []
+        for transition in transitions:
+            # Verifica se o estado atual da instancia  é igual ao estado de partida da transicao
+            if int(self.current_state) == int(transition[0]): 
+                #contador de transicoes validas de fitas que aceitam a transicao
+                validTapeTransitions = 0
+                # usado para acessar o símbolo da transição para aquela fita
+                tapeIndex = 1
+                # itera-se sobre a lista de fitas da instância
+                for tape in self.tape_list: 
+                    # se o conteudo da transicao é igual ao conteúdo atual da fita, conta-se uma fita válida
+                    if tape.get_content() == transition[(3*tapeIndex)-1]:
+                        validTapeTransitions += 1
+                    # caso contrário, pare a iteração sobre a lista de fitas (tem que ser valido para todas as fitas)
+                    else:
+                        break
+                    tapeIndex += 1
+
+                # Verifica se o número de fitas que aceitam a transição seja igual a quantidade de fitas
+                if validTapeTransitions == len(self.tape_list):
+                # é adicionado a lista de transições válidas
+                    validTransitions.append(transition)
+
+        return validTransitions
+```
+
 
 ### Autores
 **Paulo Batista - github.com/costabat** 
