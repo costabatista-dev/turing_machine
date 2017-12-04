@@ -4,7 +4,7 @@
 <p style="text-align: justify;">
 Por decisão de projeto, foi escolhido a linguagem de programação <b>Python</b>, em virtude de sua simplicidade para a realização das implementações. A versão <b>Python</b> utilizada foi a <b>3.6</b> provida pelo gerenciador de dependências <a href="https://anaconda.org/" target="_blank"><b>Anaconda</b></a>. Esta documentação está organizada da seguinte forma: 
 </p>
-### Como executar o programa
+### 1. Como executar o programa
 <p style="text-align: justify;">
  O programa da máquina de turing não possui interface gráfica, portanto sua execução se dá pela linha de comando. Dessa forma, temos a seguinte instrução para executá-lo:
  </p>
