@@ -91,7 +91,7 @@ podem ser: <br/>
 
  ```python
    def move_left(self):
-        if self.position > 0: # se existir espaco pra esquerda, vai para a esquerda
+        if self.position > 0: # se existir espaço pra esquerda, vai para a esquerda
             self.position -= 1
         else: # se não, coloca um branco no comeco da fita
             self.content.insert(0,self.whitespace_symbol)
