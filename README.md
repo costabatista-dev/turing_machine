@@ -36,33 +36,104 @@ Estes serão aprofundadamente explicados a seguir.
 </p>
 
 
-```markdown
-Syntax highlighted code block
+### Tape.py
+<p style="text-align: justify">
+Esse módulo representa a entidade <b>fita</b>.  Tal módulo faz parte da máquina de turing. Seu construtor é definido da seguinte forma.
+</p>
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```python
+  '''
+        @param whitespace: espaço em branco
+        @param tape_alphabet: alfabeto da fita
+        @param content: conteúdo presente na fita
+  '''
+    def __init__(self, whitespace, tape_alphabet, content=[]):
+        self.position = 0 # posicao atual da fita
+        self.whitespace_symbol = whitespace
+        self.alphabet = tape_alphabet
+        self.content = content
+        self.size = len(content) # tamanho da fita
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<p style="text-align: justify">
+A fita possui um método cuja funcionalidade é movimentar a posição (<b>cabeça</b>) da fita.
+</p>
+  
+```python
 
-### Jekyll Themes
+ '''
+    @param movement: movimento da fita → pode ser para esquerda (L) ou para direita (R)
+ '''
+    def move_head(self, movement):
+        if movement == 'L': 
+            self.move_left()
+        elif movement == 'R':
+            self.move_right()
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/costabatista/turing_machine/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+<p style="text-align: justify">
+Como pode ser observado, o método que movimenta a posição de uma fita tem duas possibilidades. A cabeça da fita é movida para a esquerda ou para a direita, dependendo da orientação da movimentação. Dessa forma, os métodos de movimentação que são executados
+podem ser: <br/>
+
+<ul>
+ <li>Mover para esquerda:
+ 
+ ```python
+   def move_left(self):
+        if self.position > 0: # se existir espaco pra esquerda, vai para a esquerda
+            self.position -= 1
+        else: # se nao, coloca um branco no comeco da fita
+            self.content.insert(0,self.whitespace_symbol)
+ ```
+ 
+ </li>
+ <li>Mover para a direita:
+ 
+ ```python
+    def move_right(self): 
+        if self.position < len(self.content)-1: # se tiver posicao para a direita, vai para a direita
+            self.position += 1
+        else: # se nao, coloca um espaco em branco na fita e vai para a direita
+            whitespace = self.whitespace_symbol
+            self.content.append(whitespace)
+            self.position += 1
+ ```
+ 
+ </li>
+ </ul>
+
+</p>
+
+<p style="text-align: justify">
+Além disso, na fita há métodos para obter o elemento da posição atual, bem como, para alterar o elemento da posição corrente.
+Estes são:
+</p>
+<ul>
+
+<li>Método para retornar o conteúdo da posição atual da fita:
+  
+  ```python
+    def get_content(self):
+        return self.content[self.position]
+  ```
+</li>
+  
+<li>Método para modificar o conteúdo da posição atual da fita:
+    
+    ```python
+    def set_content(self, symbol):
+        self.content[self.position] = symbol 
+    ```
+    
+ </li>
+    
+</ul>
+
+
 
 ### Autores
 **Paulo Batista - github.com/costabat** 
