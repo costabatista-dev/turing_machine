@@ -2,7 +2,7 @@
  <p style="text-align: justify;">
  Este trabalho tem finalidade avaliativa na disciplina de <b>LINGUAGENS FORMAIS, AUTOMATOS E COMPUTABILIDADE (IC4A)</b> ministrada na <b>Universidade Tecnológica Federal do Paraná Campus Campo Mourão (UTFPR-CM)</b> e representa o trabalho prático (<b>APS</b>). Ele consiste em uma implementação de um programa que tem por finalidade representar uma máquina de turing <b>não determinística</b> de acordo com definições de entrada.</p>
 <p style="text-align: justify;">
-Por decisão de projeto, foi escolhido a linguagem de programação <b>Python</b>, em virtude de sua simplicidade para a realização das implementações. A versão <b>Python</b> utilizada foi a <b>3.6</b> provida pelo gerenciador de dependências <a href="https://anaconda.org/" target="_blank"><b>Anaconda</b></a>. Este projeto está sob a <a target="https://github.com/costabatista/turing_machine/blob/master/LICENSE" target="_blank">licensa MIT</a>. 
+Por decisão de projeto, foi escolhido a linguagem de programação <b>Python</b>, em virtude de sua simplicidade para a realização das implementações. A versão <b>Python</b> utilizada foi a <b>3.6</b> provida pelo gerenciador de dependências <a href="https://anaconda.org/" target="_blank"><b>Anaconda</b></a>. Este projeto está sob a <a target="https://raw.githubusercontent.com/costabatista/turing_machine/master/LICENSE" target="_blank">licensa MIT</a>. 
 </p>
 ### Como executar o programa
 <p style="text-align: justify;">
