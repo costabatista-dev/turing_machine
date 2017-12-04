@@ -1,8 +1,8 @@
 ## Máquina de Turing Não Determinística
  <p style="text-align: justify;">
- Este trabalho tem finalidade avaliativa na disciplina de **LINGUAGENS FORMAIS, AUTOMATOS E COMPUTABILIDADE (IC4A)** ministrada na **Universidade Tecnológica Federal do Paraná Campus Campo Mourão (UTFPR-CM)** e representa o trabalho prático (**APS**). Ele consiste em uma implementação de um programa que tem por finalidade representar uma máquina de turing **não determinística** de acordo com definições de entrada.</p>
+ Este trabalho tem finalidade avaliativa na disciplina de <b>LINGUAGENS FORMAIS, AUTOMATOS E COMPUTABILIDADE (IC4A)</b> ministrada na <b>Universidade Tecnológica Federal do Paraná Campus Campo Mourão (UTFPR-CM)</b> e representa o trabalho prático (<b>APS</b>). Ele consiste em uma implementação de um programa que tem por finalidade representar uma máquina de turing <b>não determinística</b> de acordo com definições de entrada.</p>
 <p style="text-align: justify;">
-Por decisão de projeto, foi escolhido a linguagem de programação **Python**, em virtude de sua simplicidade para a realização das implementações. A versão **Python** utilizada foi a **3.6** provida pelo gerenciador de dependências [**Anaconda**](https://anaconda.org/). Esta documentação está organizada da seguinte forma: 
+Por decisão de projeto, foi escolhido a linguagem de programação <b>Python</b>, em virtude de sua simplicidade para a realização das implementações. A versão <b>Python</b> utilizada foi a <b>3.6</b> provida pelo gerenciador de dependências <a href="https://anaconda.org/" target="__blank"><b>Anaconda</b></a>. Esta documentação está organizada da seguinte forma: 
 </p>
 ### Como executar o programa
 
