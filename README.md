@@ -18,6 +18,7 @@ python3 main.py arquivo.txt  conteudo_fita_1 [conteudo_fita_2] ... [conteudo_fit
  <li><b>arquivo.txt</b>: Arquivo de texto que define uma máquina de turing (saída do programa do professor)</li>
  <li><b>[conteudo_da_fita]</b>: Sequência de caracteres de entrada</li>
 </ul>
+<b>*Observação: É necessário converter a máquina de turing do jflap previamente.</b>
 </p>
 
 
