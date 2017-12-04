@@ -253,6 +253,44 @@ As intâncias são criadas por meio do módulo <b>turing_machine</b>. Inicialmen
 De acordo com a implementação se tem o seguinte: Caso as definições do arquivo de entrada gere uma sequência determinística para a máquina de turing, ela executará apenas uma instância. Caso haja não determinismo, serão criadas novas instâncias de máquina de turing que executarão as computações necessárias. A instância gerada será uma cópia da instância atual (com o estado atual e com as transições copiadas <b>deepcopy em python</b>). 
 
 </p>
+
+<p style="text-align: justify"> 
+Para executar a máquina de turing, é definido um método. Ele executa todas as computações necessárias. 
+</p>
+
+```python
+def run(self):
+        # inicia o tamanho das fitas da primeira instancia de acordo com seus conteudos
+        for tape in self.instances[0].tape_list:
+            tape.size = len(tape.content)
+
+        '''
+            Laco de repeticao que executa enquanto existir instancias de maquina de turing
+        '''
+        while self.instances:
+            instances = self.instances # para nao iterar em uma lista que tem possibilidade de nao modificacao
+            # iterar sobre a lista de instancias
+            for instance in instances:
+                # stepResult recebe a lista de transicoes validas
+                stepResult = instance.step(self.transitions)   
+                # verifica se nao tem transicao valida
+                if len(stepResult) == 0:
+                    self.instances.remove(instance)
+                else:
+                # realiza a primeira transicao na instancia que esta iterando
+                    instance.doTransition(stepResult[0])
+                # deleta a transicao executada
+                    del stepResult[0]
+                # realiza copias da instancia e executa as transicoes restantes nelas    
+                    for result in stepResult:
+                        self.instances.append(copy.deepcopy(instance)) 
+                        self.instances[-1].doTransition(result)
+        print(False)
+```
+<p style="text-align: justify"> 
+Por meio da implementação desse método, ao executar as computações necessárias para a máquina de turing se leva em consideração para cada instância se há ou não a possibilidade de transição válida. Caso não haja transições válidas para as instâncias, é emitido por meio de um print  -- False -- que indica que a máquina de turing parou. Uma transição válida é aquela na qual a transição é válida para todas as fitas de uma instância da máquina de turing.
+</p>
+
 ### Autores
 **Paulo Batista - github.com/costabatista** 
 **Venancius Michelan**
