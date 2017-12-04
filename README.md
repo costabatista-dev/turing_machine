@@ -81,7 +81,8 @@ podem ser: <br/>
 
 <ul>
  <li>Mover para esquerda: </li>
- 
+</ul>
+
  ```python
    def move_left(self):
         if self.position > 0: # se existir espaco pra esquerda, vai para a esquerda
@@ -90,9 +91,10 @@ podem ser: <br/>
             self.content.insert(0,self.whitespace_symbol)
  ```
  
-
+<ul>
  <li>Mover para a direita: </li>
- 
+</ul> 
+
  ```python
     def move_right(self): 
         if self.position < len(self.content)-1: # se tiver posicao para a direita, vai para a direita
@@ -104,24 +106,26 @@ podem ser: <br/>
  ```
  
 
- </ul>
-
 </p>
 
 <p style="text-align: justify">
 Além disso, na fita há métodos para obter o elemento da posição atual, bem como, para alterar o elemento da posição corrente.
 Estes são:
 </p>
+
 <ul>
 
 <li>Método para retornar o conteúdo da posição atual da fita: </li>
-  
-  ```python
+</ul>  
+ 
+ ```python
     def get_content(self):
         return self.content[self.position]
   ```
-  
+
+<ul>  
 <li>Método para modificar o conteúdo da posição atual da fita:</li>
+</ul>
  
  ```python
      def set_content(self, symbol):
@@ -130,7 +134,7 @@ Estes são:
     
 
     
-</ul>
+
 
 
 
