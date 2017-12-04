@@ -219,7 +219,40 @@ Além disso, é preciso um método para verificar as transições válidas para 
         return validTransitions
 ```
 
+### turing_machine.py
+<p style="text-align: justify"> 
+As intâncias são criadas por meio do módulo <b>turing_machine</b>. Inicialmente se tem uma instância. No entanto, outras são criadas a partir do momento em que o <b>NÃO DETERMINIMISMO</b>  é encontrado. Dessa forma, tem-se o seguinte construtor para este módulo:
+</p>
 
+```python
+
+  '''
+       @param states: lista de estados
+       @param final_states: lista de estados de aceitacao
+       @param initial_state: estado inicial
+       @param transitions: lista de transicoes
+       @param whitespace: simbolo que representa o branco
+       @param tape_list: lista de fitas da turing machine
+    '''
+  def __init__(self,states, final_states, initial_state, transitions, whitespace, tape_list):
+        '''
+            self.instances: é uma lista de instâncias de turing machine, que é iniciada com apenas 
+            uma instancia que usa os estados de aceitacao e a lista de fitas da entrada
+        '''
+        self.instances = [instance(initial_state, final_states, tape_list)]
+        self.final_states = final_states
+        self.states = states
+        self.initial_state = initial_state
+        self.final_states = final_states
+        self.transitions = transitions
+        self.whitespace = whitespace
+    
+```
+
+<p style="text-align: justify"> 
+De acordo com a implementação se tem o seguinte: Caso as definições do arquivo de entrada gere uma sequência determinística para a máquina de turing, ela executará apenas uma instância. Caso haja não determinismo, serão criadas novas instâncias de máquina de turing que executarão as computações necessárias. A instância gerada será uma cópia da instância atual (com o estado atual e com as transições copiadas <b>deepcopy em python</b>). 
+
+</p>
 ### Autores
-**Paulo Batista - github.com/costabat** 
+**Paulo Batista - github.com/costabatista** 
 **Venancius Michelan**
