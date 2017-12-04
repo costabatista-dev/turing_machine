@@ -1,10 +1,9 @@
-## Welcome to GitHub Pages
+## Máquina de Turing Não Determinística
+Este trabalho tem finalidade avaliativa na disciplina de **LINGUAGENS FORMAIS, AUTOMATOS E COMPUTABILIDADE (IC4A)** ministrada na **Universidade Tecnológica Federal do Paraná Campus Campo Mourão (UTFPR-CM)** e representa o trabalho prático (**APS**). Ele consiste em uma implementação de um programa que tem por finalidade representar uma máquina de turing **não determinística** de acordo com definições de entrada.
 
-You can use the [editor on GitHub](https://github.com/costabatista/turing_machine/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+Por decisão de projeto, foi escolhido a linguagem de programação **Python**, em virtude de sua simplicidade para a realização das implementações. A versão **Python** utilizada foi a **3.6** provida pelo gerenciador de dependências [**Anaconda**](https://anaconda.org/). Esta documentação está organizada da seguinte forma: 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+### Como executar o programa
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
