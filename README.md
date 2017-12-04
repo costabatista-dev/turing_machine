@@ -151,6 +151,7 @@ O módulo instance representa uma <b>instância de uma máquina de turing</b>. o
      @param first-state: estado no qual a instância é iniciada
      @param final_states: conjunto de estados finais (lista)
      @param tape_list=[]: conjunto de fitas que compõem a instância (lista)
+  '''
      
   def __init__(self,first_state,final_states, tape_list=[]):
         self.tape_list = tape_list
