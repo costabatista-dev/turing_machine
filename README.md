@@ -37,7 +37,9 @@ Estes serão aprofundadamente explicados a seguir.
 
 
 ### main.py
-
+<p style="text-align: justify">
+A priori, é necessário um módulo no qual execute leitura do arquivo que contém os dados de entrada que definem as configurações da máquina de turing, bem como, as transições a serem tomadas passo a passo. Isso foi definido de acordo com a documentação disponibilizada para este trabalho (fornecida pelo professor).
+</p>
 
 ### tape.py
 <p style="text-align: justify">
@@ -137,7 +139,7 @@ Estes são:
     
 
     
-### Instance.py
+### instance.py
 
 <p style="text-align: justify">
 O módulo instance representa uma <b>instância de uma máquina de turing</b>. o objeto possui o seguinte construtor:
@@ -297,5 +299,5 @@ Por meio da implementação desse método, ao executar as computações necessá
 
 
 ### Autores
-**Paulo Batista - github.com/costabatista** 
-**Venancius Michelan**
+<b>Paulo Batista - <a href="https://github.com/costabatista" target="_blank">@costabatista</a></b> <br/>
+<b>Venancius Michelan - <a href="https://github.com/VMichelan" target="_blank">@VMichelan</a></b>
