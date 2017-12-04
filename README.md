@@ -134,9 +134,37 @@ Estes são:
     
 
     
+### Instance.py
 
+<p style="text-align: justify">
+O módulo instance representa uma <b>instância de uma máquina de turing</b>. o objeto possui o seguinte construtor:
+</p>
 
+```python
+  '''
+     @param first-state: estado no qual a instância é iniciada
+     @param final_states: conjunto de estados finais (lista)
+     @param tape_list=[]: conjunto de fitas que compõem a instância (lista)
+     
+  def __init__(self,first_state,final_states, tape_list=[]):
+        self.tape_list = tape_list
+        self.current_state = first_state
+        self.final_states = final_states
+```
 
+<p style="text-align: justify">
+Cada instância precisa de um método para executar uma transição. Dessa forma, temos:
+</p>
+
+```python
+    '''
+        @param transition: transição a ser executada pela instância
+    '''
+    def doTransition(self,transition):
+        self.current_state = transition[1]
+        # usado para acessar o simbolo da transicao para aquela fita
+        tapeIndex = 1
+```
 
 ### Autores
 **Paulo Batista - github.com/costabat** 
