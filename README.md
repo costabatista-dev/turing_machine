@@ -44,7 +44,7 @@ A priori, é necessário um módulo no qual execute leitura do arquivo que cont�
 
 ### tape.py
 <p style="text-align: justify">
-Esse módulo representa a entidade <b>fita</b>.  Tal módulo faz parte da máquina de turing. Seu construtor é definido da seguinte forma.
+Esse módulo representa a entidade <b>fita</b>. Tal módulo faz parte da máquina de turing. Seu construtor é definido da seguinte forma.
 </p>
 
 
@@ -93,7 +93,7 @@ podem ser: <br/>
    def move_left(self):
         if self.position > 0: # se existir espaço pra esquerda, vai para a esquerda
             self.position -= 1
-        else: # se não, coloca um branco no comeco da fita
+        else: # se não, coloca um branco no começo da fita
             self.content.insert(0,self.whitespace_symbol)
  ```
  
@@ -174,7 +174,7 @@ Cada instância precisa de um método para executar uma transição. Ele é defi
         
          # executa a transição para todas as fitas da instância
         for tape in self.tape_list:
-            # modifica o conteudo da posição atual da fita
+            # modifica o conteúdo da posição atual da fita
             tape.set_content(transition[3*(tapeIndex)])
             # move a cabeca da fita 
             tape.move_head(transition[(3*tapeIndex)+1])
@@ -202,7 +202,7 @@ Além disso, é preciso um método para verificar as transições válidas para 
     def step(self,transitions):
         validTransitions = []
         for transition in transitions:
-            # Verifica se o estado atual da instância  é igual ao estado de partida da transição
+            # Verifica se o estado atual da instância é igual ao estado de partida da transição
             if int(self.current_state) == int(transition[0]): 
                 #contador de transições válidas de fitas que aceitam a transicãoo
                 validTapeTransitions = 0
@@ -210,7 +210,7 @@ Além disso, é preciso um método para verificar as transições válidas para 
                 tapeIndex = 1
                 # itera-se sobre a lista de fitas da instância
                 for tape in self.tape_list: 
-                    # se o conteudo da transição é igual ao conteúdo atual da fita, conta-se uma fita válida
+                    # se o conteúdo da transição é igual ao conteúdo atual da fita, conta-se uma fita válida
                     if tape.get_content() == transition[(3*tapeIndex)-1]:
                         validTapeTransitions += 1
                     # caso contrário, pare a iteração sobre a lista de fitas (tem que ser válido para todas as fitas)
