@@ -55,7 +55,7 @@ Esse módulo representa a entidade <b>fita</b>.  Tal módulo faz parte da máqui
         @param content: conteúdo presente na fita
   '''
     def __init__(self, whitespace, tape_alphabet, content=[]):
-        self.position = 0 # posicao atual da fita
+        self.position = 0 # posição atual da fita
         self.whitespace_symbol = whitespace
         self.alphabet = tape_alphabet
         self.content = content
@@ -93,7 +93,7 @@ podem ser: <br/>
    def move_left(self):
         if self.position > 0: # se existir espaco pra esquerda, vai para a esquerda
             self.position -= 1
-        else: # se nao, coloca um branco no comeco da fita
+        else: # se não, coloca um branco no comeco da fita
             self.content.insert(0,self.whitespace_symbol)
  ```
  
@@ -103,9 +103,9 @@ podem ser: <br/>
 
  ```python
     def move_right(self): 
-        if self.position < len(self.content)-1: # se tiver posicao para a direita, vai para a direita
+        if self.position < len(self.content)-1: # se tiver posição para a direita, vai para a direita
             self.position += 1
-        else: # se nao, coloca um espaco em branco na fita e vai para a direita
+        else: # se não, coloca um espaco em branco na fita e vai para a direita
             whitespace = self.whitespace_symbol
             self.content.append(whitespace)
             self.position += 1
@@ -169,12 +169,12 @@ Cada instância precisa de um método para executar uma transição. Ele é defi
     '''
     def doTransition(self,transition):
         self.current_state = transition[1]
-        # usado para acessar o simbolo da transicao para aquela fita
+        # usado para acessar o símbolo da transição para aquela fita
         tapeIndex = 1
         
          # executa a transição para todas as fitas da instância
         for tape in self.tape_list:
-            # modifica o conteudo da posicao atual da fita
+            # modifica o conteudo da posição atual da fita
             tape.set_content(transition[3*(tapeIndex)])
             # move a cabeca da fita 
             tape.move_head(transition[(3*tapeIndex)+1])
@@ -182,9 +182,9 @@ Cada instância precisa de um método para executar uma transição. Ele é defi
 
         # Verifica se o estado atual esta na lista de estados finais
         for final_state in self.final_states:
-            # Se o estado atual eh igual ao estado final
+            # Se o estado atual é igual ao estado final
             if self.current_state == final_state:
-            # termino da execucao da turing machine
+            # termino da execução da turing machine
                 print(True)
                 exit(0)
         return 0
@@ -197,23 +197,23 @@ Além disso, é preciso um método para verificar as transições válidas para 
 
 ```python
    '''
-        Verifica as transicoes validas para a instancia da maquina de turing
+        Verifica as transiçõess válidas para a instância da máquina de turing
     '''
     def step(self,transitions):
         validTransitions = []
         for transition in transitions:
-            # Verifica se o estado atual da instancia  é igual ao estado de partida da transicao
+            # Verifica se o estado atual da instância  é igual ao estado de partida da transição
             if int(self.current_state) == int(transition[0]): 
-                #contador de transicoes validas de fitas que aceitam a transicao
+                #contador de transições válidas de fitas que aceitam a transicãoo
                 validTapeTransitions = 0
                 # usado para acessar o símbolo da transição para aquela fita
                 tapeIndex = 1
                 # itera-se sobre a lista de fitas da instância
                 for tape in self.tape_list: 
-                    # se o conteudo da transicao é igual ao conteúdo atual da fita, conta-se uma fita válida
+                    # se o conteudo da transição é igual ao conteúdo atual da fita, conta-se uma fita válida
                     if tape.get_content() == transition[(3*tapeIndex)-1]:
                         validTapeTransitions += 1
-                    # caso contrário, pare a iteração sobre a lista de fitas (tem que ser valido para todas as fitas)
+                    # caso contrário, pare a iteração sobre a lista de fitas (tem que ser válido para todas as fitas)
                     else:
                         break
                     tapeIndex += 1
@@ -235,16 +235,16 @@ As intâncias são criadas por meio do módulo <b>turing_machine</b>. Inicialmen
 
   '''
        @param states: lista de estados
-       @param final_states: lista de estados de aceitacao
+       @param final_states: lista de estados de aceitação
        @param initial_state: estado inicial
-       @param transitions: lista de transicoes
-       @param whitespace: simbolo que representa o branco
-       @param tape_list: lista de fitas da turing machine
+       @param transitions: lista de transições
+       @param whitespace: símbolo que representa o branco
+       @param tape_list: lista de fitas da máquina de turing
     '''
   def __init__(self,states, final_states, initial_state, transitions, whitespace, tape_list):
         '''
             self.instances: é uma lista de instâncias de turing machine, que é iniciada com apenas 
-            uma instancia que usa os estados de aceitacao e a lista de fitas da entrada
+            uma instância que usa os estados de aceitação e a lista de fitas da entrada
         '''
         self.instances = [instance(initial_state, final_states, tape_list)]
         self.final_states = final_states
@@ -272,21 +272,21 @@ def run(self):
             tape.size = len(tape.content)
 
         '''
-            Laco de repetição que executa enquanto existir instâncias de máquina de turing
+            Laço de repetição que executa enquanto existir instâncias de máquina de turing
         '''
         while self.instances:
-            instances = self.instances # para não iterar em uma lista que tem possibilidade de nao modificação
+            instances = self.instances # para não iterar em uma lista que tem possibilidade de modificação
             # iterar sobre a lista de instâncias
             for instance in instances:
-                # stepResult recebe a lista de transicoes validas
+                # stepResult recebe a lista de transições válidas
                 stepResult = instance.step(self.transitions)   
-                # verifica se nao tem transicao valida
+                # verifica se não tem transição válida
                 if len(stepResult) == 0:
                     self.instances.remove(instance)
                 else:
                 # realiza a primeira transição na instância que está iterando
                     instance.doTransition(stepResult[0])
-                # deleta a transicao executada
+                # deleta a transição executada
                     del stepResult[0]
                 # realiza cópias da instância e executa as transicões restantes nelas    
                     for result in stepResult:
