@@ -123,13 +123,13 @@ Estes são:
 </li>
   
 <li>Método para modificar o conteúdo da posição atual da fita:
-    
-    ```python
-    def set_content(self, symbol):
+ 
+ ```python
+     def set_content(self, symbol):
         self.content[self.position] = symbol 
-    ```
+ ```   
     
- </li>
+</li>
     
 </ul>
 
