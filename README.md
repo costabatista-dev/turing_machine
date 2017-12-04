@@ -36,7 +36,10 @@ Estes serão aprofundadamente explicados a seguir.
 </p>
 
 
-### Tape.py
+### main.py
+
+
+### tape.py
 <p style="text-align: justify">
 Esse módulo representa a entidade <b>fita</b>.  Tal módulo faz parte da máquina de turing. Seu construtor é definido da seguinte forma.
 </p>
@@ -260,16 +263,16 @@ Para executar a máquina de turing, é definido um método. Ele executa todas as
 
 ```python
 def run(self):
-        # inicia o tamanho das fitas da primeira instancia de acordo com seus conteudos
+        # inicia o tamanho das fitas da primeira instância de acordo com seus conteúdos
         for tape in self.instances[0].tape_list:
             tape.size = len(tape.content)
 
         '''
-            Laco de repeticao que executa enquanto existir instancias de maquina de turing
+            Laco de repetição que executa enquanto existir instâncias de máquina de turing
         '''
         while self.instances:
-            instances = self.instances # para nao iterar em uma lista que tem possibilidade de nao modificacao
-            # iterar sobre a lista de instancias
+            instances = self.instances # para não iterar em uma lista que tem possibilidade de nao modificação
+            # iterar sobre a lista de instâncias
             for instance in instances:
                 # stepResult recebe a lista de transicoes validas
                 stepResult = instance.step(self.transitions)   
@@ -277,11 +280,11 @@ def run(self):
                 if len(stepResult) == 0:
                     self.instances.remove(instance)
                 else:
-                # realiza a primeira transicao na instancia que esta iterando
+                # realiza a primeira transição na instância que está iterando
                     instance.doTransition(stepResult[0])
                 # deleta a transicao executada
                     del stepResult[0]
-                # realiza copias da instancia e executa as transicoes restantes nelas    
+                # realiza cópias da instância e executa as transicões restantes nelas    
                     for result in stepResult:
                         self.instances.append(copy.deepcopy(instance)) 
                         self.instances[-1].doTransition(result)
@@ -290,6 +293,8 @@ def run(self):
 <p style="text-align: justify"> 
 Por meio da implementação desse método, ao executar as computações necessárias para a máquina de turing se leva em consideração para cada instância se há ou não a possibilidade de transição válida. Caso não haja transições válidas para as instâncias, é emitido por meio de um print  -- False -- que indica que a máquina de turing parou. Uma transição válida é aquela na qual a transição é válida para todas as fitas de uma instância da máquina de turing.
 </p>
+
+
 
 ### Autores
 **Paulo Batista - github.com/costabatista** 
