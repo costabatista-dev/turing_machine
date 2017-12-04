@@ -78,7 +78,7 @@ A fita possui um método cuja funcionalidade é movimentar a posição (<b>cabe�
 <p style="text-align: justify">
 Como pode ser observado, o método que movimenta a posição de uma fita tem duas possibilidades. A cabeça da fita é movida para a esquerda ou para a direita, dependendo da orientação da movimentação. Dessa forma, os métodos de movimentação que são executados
 podem ser: <br/>
-
+</p>
 <ul>
  <li>Mover para esquerda: </li>
 </ul>
@@ -106,7 +106,7 @@ podem ser: <br/>
  ```
  
 
-</p>
+
 
 <p style="text-align: justify">
 Além disso, na fita há métodos para obter o elemento da posição atual, bem como, para alterar o elemento da posição corrente.
