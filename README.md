@@ -80,7 +80,7 @@ Como pode ser observado, o método que movimenta a posição de uma fita tem dua
 podem ser: <br/>
 
 <ul>
- <li>Mover para esquerda:
+ <li>Mover para esquerda: </li>
  
  ```python
    def move_left(self):
@@ -90,8 +90,8 @@ podem ser: <br/>
             self.content.insert(0,self.whitespace_symbol)
  ```
  
- </li>
- <li>Mover para a direita:
+
+ <li>Mover para a direita: </li>
  
  ```python
     def move_right(self): 
@@ -103,7 +103,7 @@ podem ser: <br/>
             self.position += 1
  ```
  
- </li>
+
  </ul>
 
 </p>
@@ -114,22 +114,21 @@ Estes são:
 </p>
 <ul>
 
-<li>Método para retornar o conteúdo da posição atual da fita:
+<li>Método para retornar o conteúdo da posição atual da fita: </li>
   
   ```python
     def get_content(self):
         return self.content[self.position]
   ```
-</li>
   
-<li>Método para modificar o conteúdo da posição atual da fita:
+<li>Método para modificar o conteúdo da posição atual da fita:</li>
  
  ```python
      def set_content(self, symbol):
         self.content[self.position] = symbol 
  ```   
     
-</li>
+
     
 </ul>
 
