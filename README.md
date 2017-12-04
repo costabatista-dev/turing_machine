@@ -1,4 +1,4 @@
-<h1> Máquina de Turing Não Determinística</h1>
+<h1> <p style="text-align: justify;">Máquina de Turing Não Determinística</p></h1>
  <p style="text-align: justify;">
  Este trabalho tem finalidade avaliativa na disciplina de <b>LINGUAGENS FORMAIS, AUTOMATOS E COMPUTABILIDADE (IC4A)</b> ministrada na <b>Universidade Tecnológica Federal do Paraná Campus Campo Mourão (UTFPR-CM)</b> e representa o trabalho prático (<b>APS</b>). Ele consiste em uma implementação de um programa que tem por finalidade representar uma máquina de turing <b>não determinística</b> de acordo com definições de entrada.</p>
 <p style="text-align: justify;">
