@@ -2,9 +2,9 @@
  <p style="text-align: justify;">
  Este trabalho tem finalidade avaliativa na disciplina de <b>LINGUAGENS FORMAIS, AUTOMATOS E COMPUTABILIDADE (IC4A)</b> ministrada na <b>Universidade Tecnológica Federal do Paraná Campus Campo Mourão (UTFPR-CM)</b> e representa o trabalho prático (<b>APS</b>). Ele consiste em uma implementação de um programa que tem por finalidade representar uma máquina de turing <b>não determinística</b> de acordo com definições de entrada.</p>
 <p style="text-align: justify;">
-Por decisão de projeto, foi escolhido a linguagem de programação <b>Python</b>, em virtude de sua simplicidade para a realização das implementações. A versão <b>Python</b> utilizada foi a <b>3.6</b> provida pelo gerenciador de dependências <a href="https://anaconda.org/" target="_blank"><b>Anaconda</b></a>. Esta documentação está organizada da seguinte forma: 
+Por decisão de projeto, foi escolhido a linguagem de programação <b>Python</b>, em virtude de sua simplicidade para a realização das implementações. A versão <b>Python</b> utilizada foi a <b>3.6</b> provida pelo gerenciador de dependências <a href="https://anaconda.org/" target="_blank"><b>Anaconda</b></a>. 
 </p>
-### 1. Como executar o programa
+### Como executar o programa
 <p style="text-align: justify;">
  O programa da máquina de turing não possui interface gráfica, portanto sua execução se dá pela linha de comando. Dessa forma, temos a seguinte instrução para executá-lo:
  </p>
@@ -21,6 +21,19 @@ python3 main.py arquivo.txt  conteudo_fita_1 [conteudo_fita_2] ... [conteudo_fit
 </p>
 
 
+### Os módulos
+
+<p style="text-align: justify">
+Dentre os módulos de código que compõem o software desenvolvido estão:
+<ol>
+ <li><b>main.py</b></li>
+ <li><b>tape.py</b></li>
+ <li><b>instance.py</b></li>
+ <li><b>turing_machine.py</b></li>
+</ol>
+
+Estes serão aprofundadamente explicados a seguir.
+</p>
 
 
 ```markdown
